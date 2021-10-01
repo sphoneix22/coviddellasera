@@ -1,0 +1,9 @@
+Numero di volte che compaiono queste parole nei programmi:
+bernardo: covid=9, covid-19=6, coronavirus=0, pandemia=6, epidemia=0
+sala: covid=8, covid-19=0, coronavirus=1, pandemia=10, epidemia=0
+michetti: covid=10, covid-19=4, coronavirus=1, pandemia=21, epidemia=0
+gualtieri: covid=9, covid-19=1, coronavirus=0, pandemia=25, epidemia=0
+raggi: covid=9, covid-19=7, coronavirus=0, pandemia=3, epidemia=0
+lorusso: covid=2, covid-19=1, coronavirus=0, pandemia=7, epidemia=0
+sganda: covid=0, covid-19=0, coronavirus=0, pandemia=0, epidemia=0
+damilano: covid=5, covid-19=0, coronavirus=0, pandemia=7, epidemia=0
