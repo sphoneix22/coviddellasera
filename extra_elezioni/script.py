@@ -15,6 +15,18 @@ programmi = {
     "damilano": str(BeautifulSoup(process("damilano.pdf"), "lxml").text).lower()
 }
 
+for el in programmi.keys():
+    programmi[el] = programmi[el].replace(".","")
+    programmi[el] = programmi[el].replace(",","")
+    programmi[el] = programmi[el].replace(":","")
+    programmi[el] = programmi[el].replace(";","")
+    programmi[el] = programmi[el].replace("?","")
+    programmi[el] = programmi[el].replace("!","")
+
+total = ""
+for el in programmi.values():
+    total += el
+
 result = "Numero di volte che compaiono queste parole nei programmi:\n"
 
 for sindaco in programmi.keys():
@@ -24,12 +36,15 @@ for sindaco in programmi.keys():
     pandemia = sum(1 for _ in re.finditer(r'\b%s\b' % re.escape("pandemia"), programmi[sindaco]))
     epidemia = sum(1 for _ in re.finditer(r'\b%s\b' % re.escape("epidemia"), programmi[sindaco]))
 
-    wordcloud = WordCloud(max_font_size=80, width=700, height=400).generate(programmi[sindaco])
-    plt.imshow(wordcloud, interpolation="bilinear")
-    plt.savefig(f"wordcloud_{sindaco}.png", dpi=1000)
+    #wordcloud = WordCloud(max_font_size=80, width=700, height=400).generate(programmi[sindaco])
+    #plt.imshow(wordcloud, interpolation="bilinear")
+    #plt.savefig(f"wordcloud_{sindaco}.png", dpi=1000)
 
     result += f"{sindaco}: covid={covid}, covid-19={covid_19}, coronavirus={coronavirus}, pandemia={pandemia}, epidemia={epidemia}\n"
+            
 
 with open('result.txt', 'w') as f:
     f.write(result)
 
+with open("programmi.txt", "w") as f:
+    f.write(total)
